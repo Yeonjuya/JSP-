@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<title>자바스크립스에서 쿠기 사용</title>
+<script type = "text/javascript"> // 페이지 로드 이벤트처리
+	window.onload = pageLoad;
+	function pageLoad(){
+		notShowPop =getCookieValue();
+		if(notShowPop!="true"){
+			window.open("popUp.html","pop","width=400,heighth=500,history=no");
+		}
+	}
+function getCookieValue(){
+	var result="false";
+	if(document.cookies != ""){
+		cookie = document.cookie.split(";");
+		for(var i=0; i<cookies.length;i++){
+			element=cookie[i].split("=");
+			value=element[0];
+			value=value.replace(/^/s*/,'');
+			if(value=="notShowPop"){
+				result= element[i];				
+			}
+		}
+	}
+	return result;
+}
+	function deleteCookies(){
+		document.cookie = "notShowPop=" + "false" + ";path=/; expires=-1" ;
+	}
+	</script>
+</head>
+<body>
+	<form>
+	<input type=button value="쿠키삭제" onClik="deleteCpploe()" >
+	</form>
+</body>
+</html>
