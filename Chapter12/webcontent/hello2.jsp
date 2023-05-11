@@ -11,7 +11,8 @@
 
 <!-- 스크립트릿 작성 -->
 <%
-   String age = request.getParameter("age");
+   
+String age = request.getParameter("age");
 %>
 <!DOCTYPE html>
 <html>
